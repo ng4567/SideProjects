@@ -49,3 +49,6 @@ active_users <- ggplot(df, aes(x=dates, y=sessions)) +
 hours
 sessions
 active_users
+
+library(writexl)
+write_xlsx(df, "/Users/nikhilgopal/Desktop/growth-rate.xlsx", )
