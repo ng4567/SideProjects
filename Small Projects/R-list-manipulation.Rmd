@@ -1,0 +1,34 @@
+---
+title: "MessingAround"
+output: pdf_document
+date: "2023-02-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Manipulating and sorting lists
+
+
+
+```{r}
+# Create list of lists
+test_list <- list(c(20,13,34,2), c(2, 3), c(45, 65, 78), c(43,
+98, 1, 22), c(3, 5, 10), c(13, 19, 14))
+
+
+fun2 <- function(a_list){
+  
+
+  # Calculate mean values of each sublist
+  mean_list <- lapply(a_list, mean)
+  
+  # Reorder list by descending mean values
+  sorted_list <- a_list[order(-unlist(mean_list))]
+  
+  return(sorted_list)
+}
+
+fun2(test_list)
+```
